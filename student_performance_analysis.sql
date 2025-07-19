@@ -1,6 +1,6 @@
 use study_db; # database used
 
-# creating table
+# create table
 CREATE TABLE students_performance (
     id INT AUTO_INCREMENT PRIMARY KEY,
     gender VARCHAR(10),
@@ -12,6 +12,7 @@ CREATE TABLE students_performance (
     reading_score INT,
     writing_score INT
 );
+
 # data load to table
 LOAD DATA LOCAL INFILE 'C:/Users/Koteswarao/Downloads/StudentsPerformance.csv'
 INTO TABLE students_performance
@@ -21,12 +22,13 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (gender, race_ethnicity, parental_level_of_education, lunch, test_preparation_course, math_score, reading_score, writing_score);
 
+# show the structure of a table.
 DESCRIBE students_performance;
 
 #Count total rows:
 select count(*) from students_performance;
 
-#select first five  values from table
+# Show first five  values from table
 select *
 from students_performance
 limit 5;
